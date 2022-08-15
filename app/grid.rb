@@ -17,4 +17,7 @@ class Grid
         end
     end
 
+    # def count_alive_neighbors()
+
+    # end
 end

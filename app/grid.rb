@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+require_relative "validation"
 # app/Grid.rb
 class Grid
   attr_reader :height, :width
@@ -22,7 +22,8 @@ class Grid
     end
   end
 
-  def count_alive_neighbors(pos_x, pos_y)
+  
+  def valid_neighbors(pos_x, pos_y)
     possibles_positions_neighbors = [
       [pos_x - 1, pos_y - 1],
       [pos_x - 1, pos_y],
@@ -33,15 +34,20 @@ class Grid
       [pos_x + 1, pos_y],
       [pos_x + 1, pos_y + 1]
     ]
-    
+
     positions_neighbors = possibles_positions_neighbors.select do |pos|
       Validation.valid_position?(self, pos[0], pos[1])
     end
+    positions_neighbors.each do |pos|
+    valid_neighbors = @board[pos[0]] [pos[1]]
+  end
+  valid_neighbors
+  end
 
+  def alive_neighbors(positions_neighbors)
     alive_neighbors = positions_neighbors.select do |pos|
       @board[pos[0]][pos[1]].alive?
     end
-
-    alive_neighbors.size
-  end
+ end
 end
+

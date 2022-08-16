@@ -28,4 +28,17 @@ describe Grid do
       end
     end
   end
+  describe '#count_alive_neighbors' do
+    context 'possibles positions neighbors' do
+      it 'validated neighbors' do
+        expect(@grid.valid_neighbors(0,0).size).to eq(3)
+      end
+
+  
+      #it 'check if the alive neighbors' do
+        #expect(@grid.board[0].length).to eq(8)
+        #expect(@grid.width).to eq(8)
+      #end
+    end
+  end
 end

@@ -2,10 +2,12 @@
 
 # app/cell.rb
 class Cell
-  attr_accessor :status, :pos_x, :pos_y
+#This class represents each space on the board/grid
+  attr_accessor :status, :pos_x, :pos_y, :neighbors
 
   def initialize
     @status = 0
+    @neighbors = []
   end
 
   def alive?

@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-gem 'rubocop'
-gem 'sandi_meter'
-gem 'rspec'
-gem 'rubycritic', require: false
 gem 'rake'
-gem 'rubycritic-small-badge', :require => false
+gem 'rspec'
+gem 'rubocop'
+gem 'rubycritic', require: false
+gem 'rubycritic-small-badge', require: false
+gem 'sandi_meter'
 
 # gem "rails"

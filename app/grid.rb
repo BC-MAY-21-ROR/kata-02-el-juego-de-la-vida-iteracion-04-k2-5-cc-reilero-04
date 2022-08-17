@@ -1,8 +1,9 @@
 # frozen_string_literal: true
-require_relative "validation"
+
+require_relative 'validation'
 # app/Grid.rb
 class Grid
-#This class contains the board of the game of life
+  # This class contains the board of the game of life
   attr_reader :height, :width
   attr_accessor :board
 
@@ -24,7 +25,6 @@ class Grid
     end
   end
 
-  
   def valid_neighbors(cell)
     neighbors = []
     possibles_positions_neighbors = [
@@ -46,6 +46,4 @@ class Grid
     end
     neighbors
   end
-
 end
-

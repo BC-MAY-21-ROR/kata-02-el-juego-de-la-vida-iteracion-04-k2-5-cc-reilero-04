@@ -11,6 +11,17 @@ class Game_of_life
     @file_input = File_input.new('input_grid.text')
     @grid = Grid.new(@file_input.read_file)
     Printer.print_board(@grid)
+    update
+    Printer.print_board(@grid)
+  end
+
+  def update
+    @grid.board.each do |row|
+      row.each(&:next)
+    end
+    @grid.board.each do |row|
+      row.each(&:update)
+    end
   end
 end
 

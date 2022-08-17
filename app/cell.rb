@@ -2,7 +2,7 @@
 
 # app/cell.rb
 class Cell
-#This class represents each space on the board/grid
+  # This class represents each space on the board/grid
   attr_accessor :status, :pos_x, :pos_y, :neighbors
 
   def initialize
@@ -14,4 +14,11 @@ class Cell
     @status == '*'
   end
 
+  def update
+    @status = @future_status
+  end
+
+  def next
+    @future_status = Validation.cell_will_live?(self, Validation.alive_neighbors(self)) ? '*' : '.'
+  end
 end
